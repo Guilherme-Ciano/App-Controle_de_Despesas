@@ -10,7 +10,13 @@ main() => runApp(AppDespesas());
 class AppDespesas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Homepage());
+    return MaterialApp(
+      home: Homepage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+      ),
+    );
   }
 }
 
@@ -63,7 +69,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Despesas Pessoais'),
         actions: [
           IconButton(
